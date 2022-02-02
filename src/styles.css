@@ -24,3 +24,7 @@ body {
 th.column-actions {
   width: 8rem;
 }
+
+.swal2-modal {
+  z-index: 50;
+}
