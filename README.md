@@ -4,7 +4,7 @@ Pasos para la instalacion de dependencias:
 
 ```bash
   cd prueba-innpactia-front
-  yarn install
+  yarn 
 ```
 
 # Ejecucion
