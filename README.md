@@ -14,7 +14,7 @@ Pasos para la instalacion de dependencias:
 Pasos para ejecutar el proyecto:
 
 ```bash
-  cd graphql-typeorm-crud
+  cd prueba-innpactia-front
   ng serve
 ```
 
