@@ -39,8 +39,14 @@ export class AuthService {
   }
 
   public isAuthenticated(): boolean {
-    ;
-    return !this.helper.isTokenExpired(this.getTokenFromStorage());
+    let valid = false;
+    try {
+      valid = !this.helper.isTokenExpired(this.getTokenFromStorage());
+    } catch (error) {
+      valid = false;
+    }
+    if (!valid) this.setTokenToStorage('');
+    return valid;
   }
 
 
