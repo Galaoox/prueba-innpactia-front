@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from '@services/auth-guard.service';
 import { IndexTemplateComponent } from '@templates/index-template/index-template.component';
 import { CustomersComponent } from '@views/customers/customers.component';
+import { UsersComponent } from '@views/users/users.component';
 
 const routes: Routes = [{
   path: '',
@@ -13,6 +14,10 @@ const routes: Routes = [{
     {
       path: '',
       component: CustomersComponent
+    },
+    {
+      path: 'usuarios',
+      component: UsersComponent
     }
   ]
 }];

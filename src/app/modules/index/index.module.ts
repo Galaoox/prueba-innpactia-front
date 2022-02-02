@@ -19,6 +19,10 @@ import { FormPhoneComponent } from '@components/phones/form-phone/form-phone.com
 import { ListRepairsComponent } from '@components/repairs/list-repairs/list-repairs.component';
 import { FormRepairComponent } from '@components/repairs/form-repair/form-repair.component';
 import { RepairsService } from '@services/repairs.service';
+import { ListUsersComponent } from '@components/users/list-users/list-users.component';
+import { UsersService } from '@services/users.service';
+import { UsersComponent } from '@views/users/users.component';
+import { FormUserComponent } from '@components/users/form-user/form-user.component';
 
 
 @NgModule({
@@ -31,7 +35,10 @@ import { RepairsService } from '@services/repairs.service';
     ListPhonesComponent,
     FormPhoneComponent,
     ListRepairsComponent,
-    FormRepairComponent
+    FormRepairComponent,
+    ListUsersComponent,
+    UsersComponent,
+    FormUserComponent
   ],
   imports: [
     CommonModule,
@@ -40,13 +47,13 @@ import { RepairsService } from '@services/repairs.service';
     NgbModule,
     ReactiveFormsModule,
     FormsModule,
-    // HttpClientModule,
   ],
   providers: [AuthService,
     AuthGuardService,
     CustomersService,
     PhonesService,
-    RepairsService
+    RepairsService,
+    UsersService
   ]
 })
 export class IndexModule { }
