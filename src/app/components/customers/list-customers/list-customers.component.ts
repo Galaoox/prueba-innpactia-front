@@ -67,14 +67,14 @@ export class ListCustomersComponent implements OnInit {
     });
   }
 
-  showPhones(idCustomer?: number) {
-    if (idCustomer) {
+  showPhones(customerId?: number) {
+    if (customerId) {
       const modalRef = this._modalService.open(ListPhonesComponent, {
         keyboard: false,
         beforeDismiss: () => false,
         size: 'lg'
       });
-      modalRef.componentInstance.idCustomer = idCustomer;
+      modalRef.componentInstance.customerId = customerId;
       modalRef.result.then((res) => {
       });
     }

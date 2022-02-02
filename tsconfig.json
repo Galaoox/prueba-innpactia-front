@@ -24,7 +24,7 @@
     ],
     "paths": {
       "@environment/*": [
-        "environments/*"
+        "./src/environments/*"
       ],
       "@components/*": [
         "./src/app/components/*"

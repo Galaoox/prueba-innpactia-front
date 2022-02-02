@@ -35,6 +35,9 @@
           </div>
         </td>
       </tr>
+      <tr *ngIf="!customers.length">
+        <td colspan="5" class="text-center">No se encontraron resultados</td>
+      </tr>
     </tbody>
   </table>
 </div>

@@ -15,7 +15,7 @@
           <th scope="col">Modelo</th>
           <th scope="col">Descripcion</th>
           <th scope="col" class="column-actions">
-            <button type="button" class="btn btn-success btn-sm">
+            <button type="button" class="btn btn-success btn-sm" (click)="openFormPhone()">
               <i class="fas fa-plus"></i>&nbsp;
               Nuevo</button>
           </th>
@@ -30,16 +30,19 @@
             <div ngbDropdown container="body">
               <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Acciones</button>
               <div ngbDropdownMenu>
-                <button ngbDropdownItem><i class="fas fa-edit"></i>&nbsp;
+                <button ngbDropdownItem (click)="openFormPhone(phone.id)"><i class="fas fa-edit"></i>&nbsp;
                   Editar</button>
                 <button ngbDropdownItem><i class="fas fa-mobile-alt"></i>&nbsp; Ver
-                  celulares</button>
+                  reparaciones</button>
                 <div class="dropdown-divider"></div>
                 <button ngbDropdownItem><i class="far fa-trash-alt"></i>&nbsp;
                   Eliminar</button>
               </div>
             </div>
           </td>
+        </tr>
+        <tr *ngIf="!phones.length">
+          <td colspan="5" class="text-center">No se encontraron resultados</td>
         </tr>
       </tbody>
     </table>

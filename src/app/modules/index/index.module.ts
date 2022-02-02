@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { IndexRoutingModule } from './index-routing.module';
 import { AuthService } from '@services/auth.service';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptorService } from '@services/token-interceptor.service';
 import { NavbarComponent } from '@components/navbar/navbar.component';
 import { IndexTemplateComponent } from '@templates/index-template/index-template.component';
 import { CustomersComponent } from '@views/customers/customers.component';
@@ -16,6 +14,8 @@ import { AuthGuardService } from '@services/auth-guard.service';
 import { CustomersService } from '@services/customers.service';
 import { FormCustomerComponent } from '@components/customers/form-customer/form-customer.component';
 import { ListPhonesComponent } from '@components/phones/list-phones/list-phones.component';
+import { PhonesService } from '@services/phones.service';
+import { FormPhoneComponent } from '@components/phones/form-phone/form-phone.component';
 
 
 @NgModule({
@@ -25,7 +25,8 @@ import { ListPhonesComponent } from '@components/phones/list-phones/list-phones.
     CustomersComponent,
     ListCustomersComponent,
     FormCustomerComponent,
-    ListPhonesComponent
+    ListPhonesComponent,
+    FormPhoneComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +39,8 @@ import { ListPhonesComponent } from '@components/phones/list-phones/list-phones.
   ],
   providers: [AuthService,
     AuthGuardService,
-    CustomersService
+    CustomersService,
+    PhonesService
   ]
 })
 export class IndexModule { }

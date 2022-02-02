@@ -8,7 +8,6 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from '@services/token-interceptor.service';
-import { ListPhonesComponent } from './components/phones/list-phones/list-phones.component';
 
 
 @NgModule({
