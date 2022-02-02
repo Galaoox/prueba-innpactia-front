@@ -16,6 +16,9 @@ import { FormCustomerComponent } from '@components/customers/form-customer/form-
 import { ListPhonesComponent } from '@components/phones/list-phones/list-phones.component';
 import { PhonesService } from '@services/phones.service';
 import { FormPhoneComponent } from '@components/phones/form-phone/form-phone.component';
+import { ListRepairsComponent } from '@components/repairs/list-repairs/list-repairs.component';
+import { FormRepairComponent } from '@components/repairs/form-repair/form-repair.component';
+import { RepairsService } from '@services/repairs.service';
 
 
 @NgModule({
@@ -26,7 +29,9 @@ import { FormPhoneComponent } from '@components/phones/form-phone/form-phone.com
     ListCustomersComponent,
     FormCustomerComponent,
     ListPhonesComponent,
-    FormPhoneComponent
+    FormPhoneComponent,
+    ListRepairsComponent,
+    FormRepairComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +45,8 @@ import { FormPhoneComponent } from '@components/phones/form-phone/form-phone.com
   providers: [AuthService,
     AuthGuardService,
     CustomersService,
-    PhonesService
+    PhonesService,
+    RepairsService
   ]
 })
 export class IndexModule { }

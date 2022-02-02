@@ -3,7 +3,8 @@ import { IPhone } from '@interfaces/IPhone';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PhonesService } from '@services/phones.service';
 import { SharedService } from '@services/shared.service';
-import { FormPhoneComponent } from '../form-phone/form-phone.component';
+import { FormPhoneComponent } from '@components/phones/form-phone/form-phone.component';
+import { ListRepairsComponent } from '@components/repairs/list-repairs/list-repairs.component';
 
 @Component({
   selector: 'app-list-phones',
@@ -54,21 +55,27 @@ export class ListPhonesComponent implements OnInit {
 
   deletePhone(id?: number) {
     if (id) {
-      this._sharedService.showConfirm({
-        title: 'Eliminar celular',
-        text: '¿Está seguro de eliminar el celular?',
-        type: 'warning',
-        confirm: () => {
-          this._phonesService.deletePhone(id).subscribe({
-            next: (res: any) => {
-              this.refreshData();
-            },
-            error: ({ error }: any) => this._sharedService.showAlert('error', error.message)
-          });
-        }
-      })
+      this._phonesService.deletePhone(id).subscribe({
+        next: (res: any) => {
+          this.refreshData();
+        },
+        error: ({ error }: any) => this._sharedService.showAlert('error', error.message)
+      });
     }
 
+  }
+
+  showRepairs(phoneId?: number) {
+    if (phoneId) {
+      const modalRef = this._modalService.open(ListRepairsComponent, {
+        keyboard: false,
+        beforeDismiss: () => false,
+        size: 'lg'
+      });
+      modalRef.componentInstance.phoneId = phoneId;
+      modalRef.result.then((res) => {
+      });
+    }
   }
 
 }

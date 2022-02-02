@@ -39,19 +39,12 @@ export class ListCustomersComponent implements OnInit {
 
   deleteCustomer(id?: number) {
     if (id) {
-      this._sharedService.showConfirm({
-        title: 'Eliminar cliente',
-        text: '¿Está seguro de eliminar el cliente?',
-        type: 'warning',
-        confirm: () => {
-          this._customerService.deleteCustomer(id).subscribe({
-            next: (res: any) => {
-              this.refreshData();
-            },
-            error: ({ error }) => this._sharedService.showAlert('error', error.message)
-          });
-        }
-      })
+      this._customerService.deleteCustomer(id).subscribe({
+        next: (res: any) => {
+          this.refreshData();
+        },
+        error: ({ error }) => this._sharedService.showAlert('error', error.message)
+      });
     }
 
   }
