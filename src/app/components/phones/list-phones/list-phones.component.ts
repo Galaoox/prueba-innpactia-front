@@ -52,4 +52,23 @@ export class ListPhonesComponent implements OnInit {
     });
   }
 
+  deletePhone(id?: number) {
+    if (id) {
+      this._sharedService.showConfirm({
+        title: 'Eliminar celular',
+        text: '¿Está seguro de eliminar el celular?',
+        type: 'warning',
+        confirm: () => {
+          this._phonesService.deletePhone(id).subscribe({
+            next: (res: any) => {
+              this.refreshData();
+            },
+            error: ({ error }: any) => this._sharedService.showAlert('error', error.message)
+          });
+        }
+      })
+    }
+
+  }
+
 }

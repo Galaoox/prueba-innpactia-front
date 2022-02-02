@@ -35,7 +35,7 @@
                 <button ngbDropdownItem><i class="fas fa-mobile-alt"></i>&nbsp; Ver
                   reparaciones</button>
                 <div class="dropdown-divider"></div>
-                <button ngbDropdownItem><i class="far fa-trash-alt"></i>&nbsp;
+                <button ngbDropdownItem (click)="deletePhone(phone.id)"><i class="far fa-trash-alt"></i>&nbsp;
                   Eliminar</button>
               </div>
             </div>
