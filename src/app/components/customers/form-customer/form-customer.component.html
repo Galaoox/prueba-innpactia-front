@@ -1,0 +1,77 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{id ? 'Editar': 'Crear'}} cliente</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close(false)">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup]="form" (ngSubmit)="submit()" class="needs-validation ">
+
+  <div class="modal-body row">
+    <div class="col-lg-6">
+      <label>Nombre:</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="far fa-address-card"></i>
+          </span>
+        </div>
+        <input type="text" class="form-control" formControlName="name" placeholder="Nombre" validateInput>
+        <div class="invalid-feedback">
+          {{form.get('name') | messageError}}
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <label>Apellido:</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="far fa-address-card"></i>
+          </span>
+        </div>
+        <input type="text" class="form-control" formControlName="lastname" placeholder="Apellido" validateInput>
+        <div class="invalid-feedback">
+          {{form.get('lastname') | messageError}}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-12">
+      <label>Dirección:</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fas fa-map-marked-alt"></i>
+          </span>
+        </div>
+        <input type="text" class="form-control" formControlName="address" placeholder="Dirección" validateInput>
+        <div class="invalid-feedback">
+          {{form.get('address') | messageError}}
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <label>Numero celular:</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fas fa-phone-square-alt"></i>
+          </span>
+        </div>
+        <input type="number" class="form-control" formControlName="numberPhone" placeholder="Numero celular"
+          validateInput>
+        <div class="invalid-feedback">
+          {{form.get('numberPhone') | messageError}}
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close(false)">Cerrar</button>
+    <button type="submit" class="btn btn-outline-success">{{id ? 'Editar': 'Crear'}}</button>
+
+  </div>
+
+</form>

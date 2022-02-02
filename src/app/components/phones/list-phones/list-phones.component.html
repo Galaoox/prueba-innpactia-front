@@ -1,0 +1,62 @@
+<div class="modal-header">
+  <h4 class="modal-title">Gestion de celulares</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close(false)">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body ">
+
+
+  <div class="table-responsive-sm">
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Modelo</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col" class="column-actions">
+            <button type="button" class="btn btn-success btn-sm">
+              <i class="fas fa-plus"></i>&nbsp;
+              Nuevo</button>
+          </th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let phone of phones">
+          <td>{{phone.model}}</td>
+          <td>{{phone.description}}</td>
+          <td class="overflow-hidden column-actions">
+            <div ngbDropdown container="body">
+              <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Acciones</button>
+              <div ngbDropdownMenu>
+                <button ngbDropdownItem><i class="fas fa-edit"></i>&nbsp;
+                  Editar</button>
+                <button ngbDropdownItem><i class="fas fa-mobile-alt"></i>&nbsp; Ver
+                  celulares</button>
+                <div class="dropdown-divider"></div>
+                <button ngbDropdownItem><i class="far fa-trash-alt"></i>&nbsp;
+                  Eliminar</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+      (pageChange)="refreshData()">
+    </ngb-pagination>
+
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshData()">
+      <option [value]="5">5 registros por pagina</option>
+      <option [value]="10">10 registros por pagina</option>
+    </select>
+  </div>
+
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close(false)">Cerrar</button>
+</div>

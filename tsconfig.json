@@ -23,12 +23,36 @@
       "dom"
     ],
     "paths": {
-      "@environment/*": ["environments/*"],
-      "@components/*": ["./src/app/components/*"],
-      "@modules/*": ["./src/app/modules/*"],
-      "@services/*": ["./src/app/services/*"],
-      "@templates/*": ["./src/app/templates/*"],
-      "@views/*": ["./src/app/views/*"]
+      "@environment/*": [
+        "environments/*"
+      ],
+      "@components/*": [
+        "./src/app/components/*"
+      ],
+      "@modules/*": [
+        "./src/app/modules/*"
+      ],
+      "@services/*": [
+        "./src/app/services/*"
+      ],
+      "@templates/*": [
+        "./src/app/templates/*"
+      ],
+      "@views/*": [
+        "./src/app/views/*"
+      ],
+      "@directives/*": [
+        "./src/app/directives/*"
+      ],
+      "@config/*": [
+        "./src/app/config/*"
+      ],
+      "@pipes/*": [
+        "./src/app/pipes/*"
+      ],
+      "@interfaces/*": [
+        "./src/app/interfaces/*"
+      ],
     },
   },
   "angularCompilerOptions": {

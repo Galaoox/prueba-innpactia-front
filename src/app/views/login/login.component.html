@@ -1,1 +1,37 @@
-<p>login works!</p>
+<div id="login" class="container-fluid d-flex justify-content-center align-items-center">
+  <div class=" col-md-6 col-lg-3">
+    <div class=" card">
+      <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="submit()" class="needs-validation">
+          <label>Usuario:</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="far fa-user"></i>
+              </span>
+            </div>
+            <input type="text" class="form-control" formControlName="username" placeholder="Usuario" validateInput>
+            <div class="invalid-feedback">
+              {{form.get('username') | messageError}}
+            </div>
+          </div>
+          <label>Contraseña:</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-key"></i>
+              </span>
+            </div>
+            <input type="password" class="form-control" formControlName="password" placeholder="Contraseña"
+              validateInput>
+            <div class="invalid-feedback">
+              {{form.get('password') | messageError}}
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Iniciar sesion</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
