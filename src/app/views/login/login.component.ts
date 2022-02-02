@@ -44,9 +44,8 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['']);
 
       },
-      error: ({ error }) => {
-        console.log(error);
-        this._sharedService.showAlert('error', error.message);
+      error: (error) => {
+        this._sharedService.showAlert('error', 'Ha ocurrido un error');
 
       }
     });
